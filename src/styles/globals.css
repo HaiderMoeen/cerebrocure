@@ -1,0 +1,241 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0F1330;
+  --bg2: #151A42;
+  --surface: #1A2050;
+  --surface2: #222A63;
+  --text: #EEF1FF;
+  --muted: #AAB4E3;
+  --line: rgba(238, 241, 255, 0.16);
+  --pink: #EE4F7F;
+  --soft: #FFB5C9;
+  --on-accent: #0A1033;
+  --glow: rgba(238, 79, 127, 0.22);
+  --nav-h: 64px;
+}
+
+html, body {
+  background: radial-gradient(75% 50% at 50% 0%, rgba(238, 79, 127, 0.14), transparent 70%),
+              linear-gradient(180deg, #0F1330 0%, #13183f 40%, #0F1330 75%, #141942 100%);
+  background-attachment: fixed;
+  color: var(--text);
+  overflow-x: clip;
+  scroll-behavior: smooth;
+}
+
+/* Scroll-linked reveal styles */
+.rv {
+  opacity: calc(0.3 + 0.7 * var(--p, 1));
+  transform: translateY(calc(90px * (1 - var(--p, 1)))) scale(calc(0.9 + 0.1 * var(--p, 1)));
+  will-change: transform, opacity;
+  transition: transform 0.05s linear, opacity 0.05s linear;
+}
+
+.rv .dim {
+  opacity: calc(0.05 + 0.95 * var(--p, 1) * var(--p, 1));
+  filter: blur(calc(7px * (1 - var(--p, 1))));
+}
+
+.rv-tilt {
+  opacity: calc(0.25 + 0.75 * var(--p, 1));
+  transform: perspective(1800px) rotateX(calc(26deg * (1 - var(--p, 1)))) translateY(calc(60px * (1 - var(--p, 1)))) scale(calc(0.88 + 0.12 * var(--p, 1)));
+  transform-origin: 50% 100%;
+  will-change: transform, opacity;
+}
+
+/* Contact Card Flash Keyframe */
+@keyframes contact-flash {
+  0%, 100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+  30% {
+    box-shadow: 0 0 0 6px var(--pink), 0 0 80px 10px var(--glow);
+  }
+}
+
+.flash {
+  animation: contact-flash 1.6s ease-in-out;
+}
+
+/* Content swap keyframe */
+@keyframes swap-in {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-swap {
+  animation: swap-in 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-swap-media {
+  animation: swap-in 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Page & Component Smooth Fade-In-Up Keyframes */
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in-up 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in-delay-1 {
+  animation: fade-in-up 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-delay-2 {
+  animation: fade-in-up 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-delay-3 {
+  animation: fade-in-up 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.45s forwards;
+  opacity: 0;
+}
+
+/* Scroll-triggered reveal animations (fade in & slide up on scroll down/up) */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-on-scroll.delay-1 {
+  transition-delay: 0.15s;
+}
+
+.reveal-on-scroll.delay-2 {
+  transition-delay: 0.3s;
+}
+
+.reveal-on-scroll.delay-3 {
+  transition-delay: 0.45s;
+}
+
+/* Flowing SVG dashed connector lines */
+@keyframes dash-flow {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -18;
+  }
+}
+
+.gline.hot {
+  stroke-dasharray: 4 5;
+  animation: dash-flow 1.4s linear infinite;
+}
+
+/* Neural output node pulse */
+@keyframes node-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 0.7;
+  }
+}
+
+.pulse {
+  transform-origin: center;
+  animation: node-pulse 2.2s ease-in-out infinite;
+}
+
+/* Hero Headline Word Fly-In Animations */
+@keyframes word-fly-in {
+  0% {
+    opacity: 0;
+    transform: translate(var(--x, 0), var(--y, 0)) rotate(var(--r, 0deg)) scale(0.8);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    filter: blur(0);
+  }
+}
+
+.fly-word {
+  display: inline-block;
+  opacity: 0;
+  animation: word-fly-in 1.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: calc(var(--i, 0) * 0.14s);
+}
+
+@keyframes cta-pop-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fly-cta {
+  opacity: 0;
+  animation: cta-pop-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 1.3s;
+}
+
+/* Focus Ring */
+:focus-visible {
+  outline: 3px solid var(--pink) !important;
+  outline-offset: 3px !important;
+  border-radius: 8px !important;
+}
+
+/* Reduced motion overrides */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .rv, .rv-tilt {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .rv .dim {
+    opacity: 1 !important;
+    filter: none !important;
+  }
+
+  .fly-word, .fly-cta {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+  }
+}
