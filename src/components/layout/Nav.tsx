@@ -46,18 +46,18 @@ export const Nav: React.FC<NavProps> = ({ activeRoute, onNavigate }) => {
           <ul className="flex items-center gap-1.5">
             <li>
               <a
-                href="#/founder"
+                href="#/product"
                 onClick={(e) => {
                   e.preventDefault();
-                  handleLinkClick('#/founder');
+                  handleLinkClick('#/product');
                 }}
                 className={`px-3.5 py-2 rounded-full text-[0.92rem] transition-all ${
-                  activeRoute === 'founder'
+                  activeRoute === 'product'
                     ? 'bg-bg2 text-text shadow-[inset_0_-2px_0_var(--pink)] font-medium'
                     : 'text-muted hover:text-text hover:bg-bg2'
                 }`}
               >
-                Founder
+                Product
               </a>
             </li>
             <li>
@@ -78,18 +78,18 @@ export const Nav: React.FC<NavProps> = ({ activeRoute, onNavigate }) => {
             </li>
             <li>
               <a
-                href="#/product"
+                href="#/founder"
                 onClick={(e) => {
                   e.preventDefault();
-                  handleLinkClick('#/product');
+                  handleLinkClick('#/founder');
                 }}
                 className={`px-3.5 py-2 rounded-full text-[0.92rem] transition-all ${
-                  activeRoute === 'product'
+                  activeRoute === 'founder'
                     ? 'bg-bg2 text-text shadow-[inset_0_-2px_0_var(--pink)] font-medium'
                     : 'text-muted hover:text-text hover:bg-bg2'
                 }`}
               >
-                Product
+                Founder
               </a>
             </li>
             <li>
@@ -128,18 +128,18 @@ export const Nav: React.FC<NavProps> = ({ activeRoute, onNavigate }) => {
           className="md:hidden absolute top-[64px] left-0 right-0 bg-[#0F1330] border-b border-line px-6 py-4 flex flex-col gap-2 shadow-2xl animate-swap"
         >
           <a
-            href="#/founder"
+            href="#/product"
             onClick={(e) => {
               e.preventDefault();
-              handleLinkClick('#/founder');
+              handleLinkClick('#/product');
             }}
             className={`px-4 py-2.5 rounded-lg transition-all text-base ${
-              activeRoute === 'founder'
+              activeRoute === 'product'
                 ? 'bg-bg2 text-text font-medium border-l-2 border-pink'
                 : 'text-muted hover:text-text hover:bg-bg2'
             }`}
           >
-            Founder
+            Product
           </a>
           <a
             href="#/media"
@@ -156,18 +156,18 @@ export const Nav: React.FC<NavProps> = ({ activeRoute, onNavigate }) => {
             Media
           </a>
           <a
-            href="#/product"
+            href="#/founder"
             onClick={(e) => {
               e.preventDefault();
-              handleLinkClick('#/product');
+              handleLinkClick('#/founder');
             }}
             className={`px-4 py-2.5 rounded-lg transition-all text-base ${
-              activeRoute === 'product'
+              activeRoute === 'founder'
                 ? 'bg-bg2 text-text font-medium border-l-2 border-pink'
                 : 'text-muted hover:text-text hover:bg-bg2'
             }`}
           >
-            Product
+            Founder
           </a>
           <a
             href="#/contact"

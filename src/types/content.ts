@@ -43,4 +43,5 @@ export interface MediaItem {
   description: string;
   link?: string;
   image?: string;
+  imageScale?: number;
 }

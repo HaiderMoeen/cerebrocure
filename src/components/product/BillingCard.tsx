@@ -20,7 +20,7 @@ export const BillingCard: React.FC<BillingCardProps> = ({ onNavigate }) => {
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(80%_120%_at_100%_0,var(--glow),transparent_60%)] pointer-events-none" />
 
       <div className="relative z-10">
-        <h2 className="dim font-display font-bold text-[clamp(1.6rem,3.2vw,2.5rem)] text-text mb-6 tracking-tight">
+        <h2 className="dim font-display font-extrabold text-[clamp(1.6rem,3.2vw,2.5rem)] text-text mb-6 tracking-tight">
           Payment Plans
         </h2>
 
@@ -37,8 +37,8 @@ export const BillingCard: React.FC<BillingCardProps> = ({ onNavigate }) => {
 
       {/* Footer Copy & CTA */}
       <div className="relative z-10 mt-8 pt-6 border-t border-line/60">
-        <p className="text-xs text-muted mb-4">
-          Please get in touch for further inquiries.
+        <p className="text-xs sm:text-sm text-muted mb-4 font-normal">
+          For Customized plans, Contact Us
         </p>
         <Button
           variant="solid"

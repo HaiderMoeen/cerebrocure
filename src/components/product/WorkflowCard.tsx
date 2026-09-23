@@ -10,7 +10,7 @@ export const WorkflowCard: React.FC = () => (
 
     <div className="relative z-10 w-full flex flex-col justify-between h-full">
       {/* Left-Aligned Workflow Heading */}
-      <h2 className="dim font-display font-bold text-[clamp(1.6rem,3.2vw,2.5rem)] text-text mb-6 sm:mb-8 tracking-tight text-left">
+      <h2 className="dim font-display font-extrabold text-[clamp(1.6rem,3.2vw,2.5rem)] text-text mb-6 sm:mb-8 tracking-tight text-left">
         Workflow
       </h2>
 

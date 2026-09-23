@@ -9,6 +9,7 @@ import { RegionKey } from '../types/content';
 export const MediaPage: React.FC = () => {
   const [selectedRegion, setSelectedRegion] = useState<RegionKey | 'all'>('all');
   const [selectedId, setSelectedId] = useState<number>(MEDIA_ITEMS[0].id);
+  const featurePanelRef = React.useRef<HTMLDivElement>(null);
 
   // Filtered dataset
   const filteredItems = MEDIA_ITEMS.filter((item) => {
@@ -38,6 +39,13 @@ export const MediaPage: React.FC = () => {
     setSelectedId(filteredItems[nextIdx].id);
   };
 
+  const handleSelectCard = (id: number) => {
+    setSelectedId(id);
+    if (featurePanelRef.current) {
+      featurePanelRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  };
+
   // Keyboard Left / Right arrow stepping
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -62,13 +70,15 @@ export const MediaPage: React.FC = () => {
     <div className="w-full flex flex-col items-center min-h-[100svh] animate-fade-in">
       <MediaHeader />
       
-      <MediaFeaturePanel
-        item={currentItem}
-        currentIndex={currentIndex >= 0 ? currentIndex : 0}
-        totalCount={filteredItems.length}
-        onPrev={handlePrev}
-        onNext={handleNext}
-      />
+      <div ref={featurePanelRef} className="w-full scroll-mt-24">
+        <MediaFeaturePanel
+          item={currentItem}
+          currentIndex={currentIndex >= 0 ? currentIndex : 0}
+          totalCount={filteredItems.length}
+          onPrev={handlePrev}
+          onNext={handleNext}
+        />
+      </div>
 
       <section className="w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10 mt-6 mb-12 animate-fade-in-delay-1">
         <RegionFilterBar
@@ -78,7 +88,7 @@ export const MediaPage: React.FC = () => {
         <MediaCardRail
           items={filteredItems}
           selectedId={currentItem.id}
-          onSelectCard={setSelectedId}
+          onSelectCard={handleSelectCard}
         />
       </section>
     </div>

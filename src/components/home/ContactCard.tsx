@@ -21,6 +21,8 @@ export const ContactCard: React.FC<ContactCardProps> = ({ flashKey }) => {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   useEffect(() => {
     if (!flashKey) return;
@@ -41,13 +43,47 @@ export const ContactCard: React.FC<ContactCardProps> = ({ flashKey }) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({ name: '', email: '', position: '', institute: '', message: '' });
-    }, 4000);
+    setIsSubmitting(true);
+    setErrorMessage(null);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json().catch(() => ({}));
+
+      if (response.ok && data.success) {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', position: '', institute: '', message: '' });
+      } else {
+        // Fallback or error message
+        const msg = data.error || 'Unable to send message directly. Opening email client fallback...';
+        setErrorMessage(msg);
+        
+        // Mailto fallback if Vercel function key not configured yet
+        const mailtoUrl = `mailto:contact@cerebrocure.ai?subject=${encodeURIComponent(
+          `Inquiry from ${formData.name}`
+        )}&body=${encodeURIComponent(
+          `Name: ${formData.name}\nEmail: ${formData.email}\nPosition: ${formData.position}\nInstitute: ${formData.institute}\n\nMessage:\n${formData.message}`
+        )}`;
+        window.location.href = mailtoUrl;
+      }
+    } catch (err) {
+      // Network error or local dev fallback
+      const mailtoUrl = `mailto:contact@cerebrocure.ai?subject=${encodeURIComponent(
+        `Inquiry from ${formData.name}`
+      )}&body=${encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\nPosition: ${formData.position}\nInstitute: ${formData.institute}\n\nMessage:\n${formData.message}`
+      )}`;
+      window.location.href = mailtoUrl;
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -177,9 +213,10 @@ export const ContactCard: React.FC<ContactCardProps> = ({ flashKey }) => {
                   <div className="flex justify-start mt-0.5">
                     <button
                       type="submit"
-                      className="w-auto px-7 py-2.5 rounded-full bg-pink hover:bg-[#ff5d8f] text-[#0A1033] font-bold text-xs sm:text-sm shadow-[0_6px_18px_rgba(238,79,127,0.4)] hover:shadow-[0_10px_24px_rgba(238,79,127,0.6)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 inline-flex items-center justify-center select-none cursor-pointer"
+                      disabled={isSubmitting}
+                      className="w-auto px-7 py-2.5 rounded-full bg-pink hover:bg-[#ff5d8f] disabled:opacity-60 text-[#0A1033] font-bold text-xs sm:text-sm shadow-[0_6px_18px_rgba(238,79,127,0.4)] hover:shadow-[0_10px_24px_rgba(238,79,127,0.6)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 inline-flex items-center justify-center select-none cursor-pointer disabled:cursor-not-allowed"
                     >
-                      Send Now
+                      {isSubmitting ? 'Sending...' : 'Send Now'}
                     </button>
                   </div>
                 </form>

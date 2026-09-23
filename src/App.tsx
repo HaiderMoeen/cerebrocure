@@ -11,24 +11,24 @@ import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 export const App: React.FC = () => {
   const { route, navigate, flashContact } = useHashRoute();
 
-  // Route-aware document title update (§18)
+  // Route-aware document title update
   useEffect(() => {
     switch (route) {
       case 'product':
-        document.title = 'Cerebrocure — Product';
+        document.title = 'Cerebrocure Technologies - Product';
         break;
       case 'media':
-        document.title = 'Cerebrocure — Media & Recognition';
+        document.title = 'Cerebrocure Technologies - Media';
         break;
       case 'founder':
-        document.title = 'Cerebrocure — Founder (Dr. Saira Osama)';
+        document.title = 'Cerebrocure Technologies - Founder';
         break;
       case 'privacy':
-        document.title = 'Cerebrocure — Privacy Policy';
+        document.title = 'Cerebrocure Technologies - Privacy Policy';
         break;
       case 'home':
       default:
-        document.title = 'Cerebrocure — Innovating Healthcare Through AI';
+        document.title = 'Cerebrocure Technologies - Home';
         break;
     }
   }, [route]);

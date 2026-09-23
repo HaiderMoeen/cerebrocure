@@ -6,11 +6,11 @@ import { ArrowLeft, ArrowRight, RotateCw, Star, Download, User } from 'lucide-re
 export const PlatformDemo: React.FC = () => (
   <section className="demo py-20 px-4 sm:px-6 lg:px-10 w-full flex flex-col items-center">
     {/* Section Header */}
-    <div className="max-w-[1180px] mx-auto text-center mb-12">
-      <h2 className="font-display font-bold text-[clamp(2rem,4.8vw,3.6rem)] text-white tracking-tight mb-3">
+    <div className="max-w-[1180px] mx-auto text-center mb-8 sm:mb-10">
+      <h2 className="font-display font-extrabold text-[clamp(1.6rem,3.2vw,2.5rem)] text-text tracking-tight mb-2">
         Inside the platform
       </h2>
-      <p className="text-[#94a3b8] text-base sm:text-lg">
+      <p className="text-muted text-xs sm:text-sm font-medium">
         A look at the Cerebrocure Stroke Prognosis screen.
       </p>
     </div>

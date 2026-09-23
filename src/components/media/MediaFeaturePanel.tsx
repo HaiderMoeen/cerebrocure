@@ -31,27 +31,20 @@ export const MediaFeaturePanel: React.FC<MediaFeaturePanelProps> = ({
         {/* Radial Corner Glow matching home page */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(80%_120%_at_100%_0,var(--glow),transparent_60%)] pointer-events-none" />
 
-        {/* Left Art Tile / Milestone Image */}
-        <div className="art-tile relative z-10 w-full h-[280px] sm:h-[340px] lg:h-[360px] rounded-3xl overflow-hidden border border-pink/30 select-none bg-gradient-to-br from-[#101438] via-[#0d102e] to-[#161c47] p-2.5 sm:p-3.5 flex items-center justify-center">
+        {/* Left Art Tile / Milestone Image - Centered for equal margins from left border & text */}
+        <div className="relative z-10 flex items-center justify-center max-h-[320px] sm:max-h-[360px] lg:max-h-[400px] max-w-full justify-self-center lg:justify-self-center">
           {item.image ? (
-            <div className="relative w-full h-full flex items-center justify-center overflow-hidden rounded-2xl bg-bg/40 backdrop-blur-sm">
-              {/* Ambient Blurred Backdrop for Aspect Ratio Fill */}
-              <img
-                src={item.image}
-                alt=""
-                aria-hidden="true"
-                className="absolute inset-0 w-full h-full object-cover scale-125 blur-xl opacity-35 pointer-events-none"
-              />
-              {/* Full-View Foreground Image preserving natural shape */}
-              <img
-                src={item.image}
-                alt={item.title}
-                className="relative z-10 max-w-full max-h-full w-auto h-auto object-contain rounded-xl shadow-lg select-none"
-              />
-            </div>
+            <img
+              src={item.image}
+              alt={item.title}
+              style={item.imageScale ? { transform: `scale(${item.imageScale})` } : undefined}
+              className={`max-h-[320px] sm:max-h-[360px] lg:max-h-[400px] max-w-full w-auto h-auto object-contain rounded-2xl sm:rounded-3xl shadow-xl border border-white/30 select-none transition-transform duration-300 ${
+                item.id === 8 ? 'bg-white p-4 sm:p-6' : ''
+              }`}
+            />
           ) : (
             <div
-              className="w-full h-full p-6 flex items-center justify-center relative rounded-2xl overflow-hidden"
+              className="w-full min-h-[240px] p-6 flex items-center justify-center relative rounded-2xl sm:rounded-3xl overflow-hidden border border-white/30"
               style={{
                 background: `linear-gradient(140deg, color-mix(in srgb, ${regionColor} 42%, var(--bg2)), var(--bg2))`,
               }}
@@ -82,7 +75,7 @@ export const MediaFeaturePanel: React.FC<MediaFeaturePanelProps> = ({
         <div className="relative z-10 flex flex-col justify-between h-full">
           <div>
             {/* Tag Badge & Kicker */}
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex items-center gap-3 mb-3.5">
               <span className="px-3.5 py-1 rounded-full text-xs font-bold text-[#0A1033] bg-pink shadow-[0_2px_10px_rgba(238,79,127,0.35)] select-none">
                 {item.tag}
               </span>
@@ -91,13 +84,20 @@ export const MediaFeaturePanel: React.FC<MediaFeaturePanelProps> = ({
               </span>
             </div>
 
-            {/* Title H2 */}
-            <h2 className="font-display font-bold text-[clamp(1.5rem,2.9vw,2.4rem)] leading-[1.08] text-text mb-4 tracking-tight">
-              {item.title}
+            {/* Title H2 - Matches Founder Page heading (Dr. Saira title size) */}
+            <h2 className="font-display font-extrabold text-lg sm:text-xl lg:text-2xl text-text mb-3.5 tracking-tight">
+              {item.title.includes('®')
+                ? item.title.split('®').map((part, idx, arr) => (
+                    <React.Fragment key={idx}>
+                      {part}
+                      {idx < arr.length - 1 && <sup className="text-[0.65em] align-super">®</sup>}
+                    </React.Fragment>
+                  ))
+                : item.title}
             </h2>
 
-            {/* Description */}
-            <p className="text-muted text-sm sm:text-base leading-relaxed mb-6">
+            {/* Description - Matches Founder Page body text size */}
+            <p className="text-muted text-[0.78rem] sm:text-[0.84rem] lg:text-[0.9rem] leading-relaxed mb-6">
               {item.description}
             </p>
           </div>

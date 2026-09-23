@@ -8,8 +8,8 @@ export const MediaHeader: React.FC = () => (
 
     <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-8 items-end relative z-10">
       <div>
-        <h1 className="font-display font-bold text-[clamp(2rem,4.6vw,3.8rem)] leading-[1.05] text-text tracking-tight mb-4">
-          Recognition for AI in stroke care
+        <h1 className="font-display font-extrabold text-[clamp(1.6rem,3.2vw,2.5rem)] leading-tight text-text tracking-tight mb-4">
+          Achievements & Recognition
         </h1>
       </div>
 

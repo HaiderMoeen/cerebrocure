@@ -69,7 +69,7 @@ export const FeatureStrip: React.FC = () => {
               key={item.id}
               className="group flex items-center gap-3.5 sm:gap-4 py-3.5 first:pt-1 last:pb-1 px-2 rounded-xl hover:bg-bg2/60 transition-all duration-300 cursor-pointer select-none"
             >
-              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-bg border border-line group-hover:border-pink group-hover:bg-bg2 group-hover:scale-105 group-hover:shadow-[0_0_20px_rgba(238,79,127,0.4)] transition-all duration-300 shrink-0 flex items-center justify-center p-2">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-bg border border-line group-hover:border-pink group-hover:bg-bg2 group-hover:shadow-[0_0_20px_rgba(238,79,127,0.4)] transition-all duration-300 shrink-0 flex items-center justify-center p-2">
                 <img
                   src={getIconSrc(item.id, item.icon)}
                   alt={`${item.title} icon`}
@@ -93,10 +93,10 @@ export const FeatureStrip: React.FC = () => {
           {FEATURES.map((item) => (
             <div
               key={item.id}
-              className="group relative flex flex-col items-center text-center p-3.5 sm:p-4 rounded-2xl hover:bg-bg2/80 hover:scale-105 transition-all duration-300 ease-out z-10 hover:z-30 cursor-pointer select-none"
+              className="group relative flex flex-col items-center text-center p-3.5 sm:p-4 rounded-2xl hover:bg-bg2/80 transition-all duration-300 ease-out z-10 cursor-pointer select-none"
             >
               {/* Icon Container */}
-              <div className="w-14 h-14 lg:w-16 lg:h-16 mb-4 rounded-xl lg:rounded-2xl bg-bg border border-line group-hover:border-pink group-hover:bg-bg2 group-hover:scale-110 group-hover:shadow-[0_0_25px_rgba(238,79,127,0.45)] transition-all duration-300 shrink-0 flex items-center justify-center p-2.5">
+              <div className="w-14 h-14 lg:w-16 lg:h-16 mb-4 rounded-xl lg:rounded-2xl bg-bg border border-line group-hover:border-pink group-hover:bg-bg2 group-hover:shadow-[0_0_25px_rgba(238,79,127,0.45)] transition-all duration-300 shrink-0 flex items-center justify-center p-2.5">
                 <img
                   src={getIconSrc(item.id, item.icon)}
                   alt={`${item.title} icon`}
