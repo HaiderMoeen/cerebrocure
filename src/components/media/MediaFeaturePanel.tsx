@@ -39,7 +39,7 @@ export const MediaFeaturePanel: React.FC<MediaFeaturePanelProps> = ({
               alt={item.title}
               style={item.imageScale ? { transform: `scale(${item.imageScale})` } : undefined}
               className={`max-h-[320px] sm:max-h-[360px] lg:max-h-[400px] max-w-full w-auto h-auto object-contain rounded-2xl sm:rounded-3xl shadow-xl border border-white/30 select-none transition-transform duration-300 ${
-                item.id === 8 ? 'bg-white p-4 sm:p-6' : ''
+                item.id === 8 || item.id === 9 ? 'bg-white p-3.5 sm:p-5' : ''
               }`}
             />
           ) : (

@@ -14,6 +14,41 @@ export const BillingOrbitArt: React.FC = () => (
   </svg>
 );
 
+export const BillingCustomizedArt: React.FC = () => (
+  <svg viewBox="0 0 240 120" className="w-full h-full rounded-2xl border border-pink/30 bg-[#0d1130]/80 p-3 overflow-visible shadow-md" aria-hidden="true">
+    <defs>
+      <linearGradient id="artGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#ee4f7f" stopOpacity="0.8" />
+        <stop offset="100%" stopColor="#2d3c82" stopOpacity="0.4" />
+      </linearGradient>
+    </defs>
+    
+    {/* Network Nodes and Connecting Lines */}
+    <path d="M 60 75 L 120 40 L 180 75" fill="none" stroke="var(--pink)" strokeWidth="1.5" strokeDasharray="4 4" />
+    <path d="M 120 40 L 120 90" fill="none" stroke="var(--pink)" strokeWidth="1.5" strokeDasharray="4 4" />
+
+    {/* Center Hospital / Network Node */}
+    <g transform="translate(102, 22)">
+      <rect x="0" y="0" width="36" height="36" rx="10" fill="url(#artGlow)" stroke="var(--pink)" strokeWidth="1.5" />
+      {/* Plus / Medical Cross */}
+      <path d="M 18 10 L 18 26 M 10 18 L 26 18" fill="none" stroke="#ffffff" strokeWidth="2.5" strokeLinecap="round" />
+    </g>
+
+    {/* Node Left - Clinic/Partner */}
+    <g transform="translate(44, 60)">
+      <circle cx="16" cy="16" r="16" fill="var(--surface2)" stroke="var(--text)" strokeWidth="1.5" />
+      <path d="M 10 16 L 22 16 M 16 10 L 16 22" fill="none" stroke="var(--pink)" strokeWidth="1.5" strokeLinecap="round" />
+    </g>
+
+    {/* Node Right - Medical Network */}
+    <g transform="translate(164, 60)">
+      <circle cx="16" cy="16" r="16" fill="var(--surface2)" stroke="var(--text)" strokeWidth="1.5" />
+      <path d="M 10 16 L 22 16 M 16 10 L 16 22" fill="none" stroke="var(--pink)" strokeWidth="1.5" strokeLinecap="round" />
+    </g>
+
+  </svg>
+);
+
 export const BillingPeopleArt: React.FC = () => (
   <svg viewBox="0 0 240 120" className="w-full h-full rounded-xl border border-line bg-bg2/40 p-2 overflow-visible" aria-hidden="true">
     <g transform="translate(45, 30)">

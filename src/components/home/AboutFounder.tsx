@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Linkedin } from 'lucide-react';
 import { useIntersectionReveal } from '../../hooks/useIntersectionReveal';
 import drSairaImg from '../../assets/Dr Saira.jpg';
@@ -6,28 +6,6 @@ import drSairaImg from '../../assets/Dr Saira.jpg';
 export const AboutFounder: React.FC = () => {
   const [headerRef, headerVisible] = useIntersectionReveal<HTMLDivElement>();
   const [bioCardRef, bioCardVisible] = useIntersectionReveal<HTMLDivElement>();
-  const [photoRef, photoVisible] = useIntersectionReveal<HTMLDivElement>();
-
-  const fullTitle = 'Dr. Saira Osama';
-  const [displayedTitle, setDisplayedTitle] = useState('');
-  const [isTypingComplete, setIsTypingComplete] = useState(false);
-
-  useEffect(() => {
-    let index = 0;
-    setDisplayedTitle('');
-    setIsTypingComplete(false);
-    const timer = setInterval(() => {
-      if (index < fullTitle.length) {
-        setDisplayedTitle(fullTitle.slice(0, index + 1));
-        index++;
-      } else {
-        setIsTypingComplete(true);
-        clearInterval(timer);
-      }
-    }, 90);
-
-    return () => clearInterval(timer);
-  }, []);
 
   return (
     <section id="founder" className="py-8 sm:py-12 px-4 sm:px-6 lg:px-10 w-full scroll-mt-24">
@@ -57,9 +35,7 @@ export const AboutFounder: React.FC = () => {
             {/* Heading with LinkedIn Icon */}
             <div className="flex items-center gap-3 mb-3.5">
               <h3 className="font-display font-extrabold text-lg sm:text-xl lg:text-2xl text-white tracking-tight flex items-center min-h-[36px]">
-                <span>{displayedTitle}</span>
-                {/* Blinking Typing Cursor */}
-                <span className="inline-block w-[3px] h-[0.9em] bg-pink ml-1 animate-pulse" />
+                Dr. Saira Osama
               </h3>
 
               <a

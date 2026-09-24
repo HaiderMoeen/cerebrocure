@@ -1,15 +1,15 @@
 import { MediaItem } from '../types/content';
 import finalistInnovationImg from '../assets/milestones/finalist-innovation-factory.png';
 import featuredExhibitorAiImg from '../assets/milestones/featured-exhibitor-ai-for-good.png';
-import guestLectureMontRoseImg from '../assets/milestones/guest-lecture-mont-rose.jpeg';
-import finalistWomenTechFranceImg from '../assets/milestones/finalist-women-in-tech-france.jpeg';
+import guestLectureMontRoseImg from '../assets/milestones/guest-lecture-mont-rose.jpg';
+import finalistWomenTechFranceImg from '../assets/milestones/finalist-women-in-tech-france.jfif';
 import exhibitorGitexDubaiImg from '../assets/milestones/exhibitor-gitex-global-dubai.jpg';
 import gitexDubaiImg from '../assets/milestones/Gitex-dubai.jpeg';
-import speaker10PearlsImg from '../assets/milestones/speaker-10pearls-wtq.jpeg';
+import speaker10PearlsImg from '../assets/milestones/10pearls.jpg';
 import aiSeekhoDayImg from '../assets/milestones/ai-seekho-day.jpeg';
 import specialGuestSeePakImg from '../assets/milestones/special-guest-see-pakistan.jpeg';
 import completionIncubatorImg from '../assets/milestones/completion-national-health-incubator.jpg';
-import winnerWomenTechApacImg from '../assets/milestones/winner-women-in-tech-apac.jpeg';
+import winnerWomenTechApacImg from '../assets/milestones/winner-women-in-tech-apac.jpg';
 import nvidiaInceptionImg from '../assets/milestones/20181218-Nvidia-Inception.webp';
 import keynoteImg from '../assets/milestones/Keynote.jpeg';
 import googleStartupsImg from '../assets/milestones/Google-for-StartUps.jfif';
@@ -29,7 +29,6 @@ export const MEDIA_ITEMS: MediaItem[] = [
     description: 'Cerebrocure Technologies received the Most Impactful Initiative Award for its work in AI-driven stroke care innovation.',
     link: 'https://www.instagram.com/p/DBGgQLuqjRS/',
     image: winnerWomenTechApacImg,
-    imageScale: 1.2,
   },
   {
     id: 2,
@@ -52,7 +51,6 @@ export const MEDIA_ITEMS: MediaItem[] = [
     description: 'Selected as a Top 17 Global Finalist in the SuperNova Pitching Competition at GITEX Global in Dubai, presenting Cerebrocure\'s AI-driven stroke care platform to international judges, investors, and technology leaders.',
     link: 'https://lnkd.in/p/du7eJKz9',
     image: gitexDubaiImg,
-    imageScale: 1.35,
   },
   {
     id: 5,
@@ -118,7 +116,6 @@ export const MEDIA_ITEMS: MediaItem[] = [
     description: 'Recognised as a global finalist at the Women in Tech Global Awards 2024, held at the Résidence President of the National Assembly in Paris, for advancing equity in stroke care through AI-driven solutions.',
     link: 'https://www.linkedin.com/posts/womenintechorg_witga24-womenintech-womeninstem-activity-7260586547610079232-8_JO',
     image: finalistWomenTechFranceImg,
-    imageScale: 1.2,
   },
   {
     id: 3,
@@ -130,7 +127,6 @@ export const MEDIA_ITEMS: MediaItem[] = [
     description: 'Invited by Mont Rose College, London, Dr. Saira Osama delivered a lecture titled "Using AI in Making Effective Healthcare / Clinical Diagnoses" on the transformative role of AI in healthcare.',
     link: 'https://www.facebook.com/photo.php?fbid=1146688600818571&id=100064323264131&set=a.559281679559269',
     image: guestLectureMontRoseImg,
-    imageScale: 1.18,
   },
   {
     id: 9,
