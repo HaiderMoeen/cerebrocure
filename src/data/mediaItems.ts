@@ -42,6 +42,16 @@ export const MEDIA_ITEMS: MediaItem[] = [
     image: finalistInnovationImg,
   },
   {
+    id: 18,
+    region: 'global',
+    year: 2024,
+    glyph: 'medal',
+    tag: 'Grant',
+    title: 'Fund for Innovation in Development (FID) Grant for AI-Powered Stroke Care',
+    description: 'Funded by the Fund for Innovation in Development, backed by the French Government, to develop and pilot AI-powered cloud-based software designed to support faster, informed stroke treatment decisions in Pakistan.',
+    link: 'https://fundinnovation.dev/en/projects/ai-powered-software-enhance-stroke-treatment-pakistan',
+  },
+  {
     id: 13,
     region: 'mideast',
     year: 2024,
