@@ -1,5 +1,5 @@
 import React from 'react';
-import billingCardImg from '../../assets/billing-card.png';
+import billingCardImg from '../../assets/billing-card.jfif';
 import { RevealPanel } from '../ui/RevealPanel';
 import { ArrowRight } from 'lucide-react';
 
