@@ -6,7 +6,7 @@ import finalistWomenTechFranceImg from '../assets/milestones/finalist-women-in-t
 import exhibitorGitexDubaiImg from '../assets/milestones/exhibitor-gitex-global-dubai.jpg';
 import gitexDubaiImg from '../assets/milestones/Gitex-dubai.jpeg';
 import speaker10PearlsImg from '../assets/milestones/10pearls.jpg';
-import aiSeekhoDayImg from '../assets/milestones/ai-seekho-day.jpeg';
+import aiSeekhoDayImg from '../assets/milestones/ai-seekho-day.jpg';
 import specialGuestSeePakImg from '../assets/milestones/special-guest-see-pakistan.jpeg';
 import completionIncubatorImg from '../assets/milestones/completion-national-health-incubator.jpg';
 import winnerWomenTechApacImg from '../assets/milestones/winner-women-in-tech-apac.jpg';
@@ -201,7 +201,7 @@ export const MEDIA_ITEMS: MediaItem[] = [
     tag: 'Speaker',
     title: 'AI Seekho Day: Building AI Solutions for Social Impact',
     description: 'Delivered a session on building AI solutions for social impact, sharing the journey of developing AI-driven healthcare innovations and guiding students on applied AI.',
-    link: 'https://www.facebook.com/10pearls.pakistan/',
+    link: 'https://gdg.community.dev/events/details/google-gdg-on-campus-beaconhouse-national-university-lahore-pakistan-presents-ai-seekho-day-2025-1/',
     image: aiSeekhoDayImg,
   },
 ];

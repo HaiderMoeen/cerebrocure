@@ -1,7 +1,7 @@
 import React from 'react';
 import { BillingMultiSiteArt } from '../icons/BillingArt';
 import { RevealPanel } from '../ui/RevealPanel';
-import { Mail, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 interface BillingCardProps {
   onNavigate: (hash: string) => void;
@@ -50,7 +50,6 @@ export const BillingCard: React.FC<BillingCardProps> = ({ onNavigate }) => {
             }}
             className="w-full py-3.5 px-6 rounded-full bg-gradient-to-r from-pink via-[#ff5d8f] to-pink text-[#0A1033] font-extrabold text-sm sm:text-base shadow-[0_6px_20px_rgba(238,79,127,0.4)] hover:shadow-[0_10px_28px_rgba(238,79,127,0.6)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 inline-flex items-center justify-center gap-2.5 select-none cursor-pointer"
           >
-            <Mail size={18} />
             <span>Get in touch</span>
             <ArrowRight size={18} />
           </a>
