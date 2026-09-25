@@ -21,12 +21,11 @@ export const BillingCard: React.FC<BillingCardProps> = ({ onNavigate }) => {
           </h2>
 
           {/* Multi-Site Hospital & Document Artwork */}
-          <div className="w-full aspect-[280/160] mb-6 rounded-2xl overflow-hidden bg-[#0A0D28]/60 border border-pink/30 flex items-center justify-center p-2 relative group shadow-inner">
-            <div className="absolute inset-0 bg-gradient-to-tr from-pink/10 via-transparent to-purple-500/10 opacity-50 pointer-events-none" />
+          <div className="w-full aspect-[16/9] mb-6 rounded-2xl overflow-hidden bg-[#0A0D28] border border-pink/30 relative group shadow-inner">
             <img 
               src={billingCardImg} 
               alt="Multi-Site Hospital Access & AI Licensing" 
-              className="w-full h-full object-contain mix-blend-screen drop-shadow-[0_0_20px_rgba(238,79,127,0.35)] filter contrast-110 saturate-115 transition-transform duration-500 group-hover:scale-[1.03]"
+              className="w-full h-full object-cover filter contrast-105 saturate-105 transition-transform duration-500 group-hover:scale-[1.03]"
             />
           </div>
 
