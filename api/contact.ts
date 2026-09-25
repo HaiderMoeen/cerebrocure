@@ -34,7 +34,7 @@ export default async function handler(req: any, res: any) {
       },
       body: JSON.stringify({
         from: process.env.SENDER_EMAIL || 'Cerebrocure Contact Form <onboarding@resend.dev>',
-        to: [process.env.RECIPIENT_EMAIL || 'haider.moeenyt@gmail.com'],
+        to: [process.env.RECIPIENT_EMAIL || 'contact@cerebrocure.ai'],
         reply_to: email,
         subject: `New Contact Request from ${name}${institute ? ` (${institute})` : ''}`,
         html: `
