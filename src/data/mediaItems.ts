@@ -1,4 +1,5 @@
 import { MediaItem } from '../types/content';
+import fidImg from '../assets/milestones/FID.jpg';
 import finalistInnovationImg from '../assets/milestones/finalist-innovation-factory.png';
 import featuredExhibitorAiImg from '../assets/milestones/featured-exhibitor-ai-for-good.png';
 import guestLectureMontRoseImg from '../assets/milestones/guest-lecture-mont-rose.jpg';
@@ -20,6 +21,38 @@ import lahoreEvaluatorImg from '../assets/milestones/Lahore-Round-Evaluator.jfif
 export const MEDIA_ITEMS: MediaItem[] = [
   // --- Company Milestones ---
   {
+    id: 18,
+    region: 'global',
+    year: 2024,
+    glyph: 'medal',
+    tag: 'Grant',
+    title: 'Fund for Innovation in Development (FID) Grant for AI-Powered Stroke Care',
+    description: 'Funded by the Fund for Innovation in Development, backed by the French Government, to develop and pilot AI-powered cloud-based software designed to support faster, informed stroke treatment decisions in Pakistan.',
+    link: 'https://fundinnovation.dev/en/projects/ai-powered-software-enhance-stroke-treatment-pakistan',
+    image: fidImg,
+  },
+  {
+    id: 14,
+    region: 'global',
+    year: 2026,
+    glyph: 'chip',
+    tag: 'Program',
+    title: 'Google for Startups Cloud Program',
+    description: 'Accepted into the Google for Startups Cloud Program, receiving Google Cloud credits and technical support to accelerate the development of Cerebrocure’s AI-powered healthcare technology platform.',
+    link: 'https://www.linkedin.com/posts/cerebrocure-technologies-pvt-ltd_over-a-year-into-our-journey-with-our-acceptance-activity-7508202199420833793-pGnv?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFAa9M4Bi-KIJz-fkQrAPzImPgMUf1g4Va8',
+    image: googleStartupsImg,
+  },
+  {
+    id: 8,
+    region: 'global',
+    year: 2025,
+    glyph: 'chip',
+    tag: 'Accepted',
+    title: 'NVIDIA Inception Program',
+    description: 'Accepted into the NVIDIA Inception Program, a global platform supporting cutting-edge startups, with access to NVIDIA resources, expertise and ecosystem to accelerate the mission of transforming stroke care.',
+    image: nvidiaInceptionImg,
+  },
+  {
     id: 1,
     region: 'apac',
     year: 2024,
@@ -29,27 +62,6 @@ export const MEDIA_ITEMS: MediaItem[] = [
     description: 'Cerebrocure Technologies received the Most Impactful Initiative Award for its work in AI-driven stroke care innovation.',
     link: 'https://www.instagram.com/p/DBGgQLuqjRS/',
     image: winnerWomenTechApacImg,
-  },
-  {
-    id: 2,
-    region: 'global',
-    year: 2025,
-    glyph: 'medal',
-    tag: 'Finalist',
-    title: 'Finalist, Innovation Factory Pitching Competition',
-    description: 'Selected as one of the top three finalists in the Women Entrepreneurs Pitching Competition at the AI for Good Global Summit 2025 in Geneva, organised by the United Nations and ITU.',
-    link: 'https://www.linkedin.com/pulse/cerebrocure-pioneers-stroke-innovation-womens-djmue/',
-    image: finalistInnovationImg,
-  },
-  {
-    id: 18,
-    region: 'global',
-    year: 2024,
-    glyph: 'medal',
-    tag: 'Grant',
-    title: 'Fund for Innovation in Development (FID) Grant for AI-Powered Stroke Care',
-    description: 'Funded by the Fund for Innovation in Development, backed by the French Government, to develop and pilot AI-powered cloud-based software designed to support faster, informed stroke treatment decisions in Pakistan.',
-    link: 'https://fundinnovation.dev/en/projects/ai-powered-software-enhance-stroke-treatment-pakistan',
   },
   {
     id: 13,
@@ -74,6 +86,17 @@ export const MEDIA_ITEMS: MediaItem[] = [
     image: featuredExhibitorAiImg,
   },
   {
+    id: 2,
+    region: 'global',
+    year: 2025,
+    glyph: 'medal',
+    tag: 'Finalist',
+    title: 'Finalist, Innovation Factory Pitching Competition',
+    description: 'Selected as one of the top three finalists in the Women Entrepreneurs Pitching Competition at the AI for Good Global Summit 2025 in Geneva, organised by the United Nations and ITU.',
+    link: 'https://www.linkedin.com/pulse/cerebrocure-pioneers-stroke-innovation-womens-djmue/',
+    image: finalistInnovationImg,
+  },
+  {
     id: 6,
     region: 'mideast',
     year: 2025,
@@ -82,27 +105,6 @@ export const MEDIA_ITEMS: MediaItem[] = [
     title: 'Exhibitor, GITEX Global 2025, Startup Pod, Dubai',
     description: 'Exhibited in the Startup Pod at GITEX Global 2025 at the Dubai World Trade Centre, presenting AI-driven stroke care and meeting global investors, healthcare leaders and technology partners. The milestone supports the mission to democratise stroke care across low- and middle-income countries.',
     image: exhibitorGitexDubaiImg,
-  },
-  {
-    id: 8,
-    region: 'global',
-    year: 2025,
-    glyph: 'chip',
-    tag: 'Accepted',
-    title: 'NVIDIA Inception Program',
-    description: 'Accepted into the NVIDIA Inception Program, a global platform supporting cutting-edge startups, with access to NVIDIA resources, expertise and ecosystem to accelerate the mission of transforming stroke care.',
-    image: nvidiaInceptionImg,
-  },
-  {
-    id: 14,
-    region: 'global',
-    year: 2026,
-    glyph: 'chip',
-    tag: 'Program',
-    title: 'Google for Startups Cloud Program',
-    description: 'Accepted into the Google for Startups Cloud Program, receiving Google Cloud credits and technical support to accelerate the development of Cerebrocure’s AI-powered healthcare technology platform.',
-    link: 'https://www.linkedin.com/posts/cerebrocure-technologies-pvt-ltd_over-a-year-into-our-journey-with-our-acceptance-activity-7508202199420833793-pGnv?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFAa9M4Bi-KIJz-fkQrAPzImPgMUf1g4Va8',
-    image: googleStartupsImg,
   },
   {
     id: 10,
