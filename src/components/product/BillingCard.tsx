@@ -1,7 +1,7 @@
 import React from 'react';
-import { BillingCustomizedArt } from '../icons/BillingArt';
-import { Button } from '../ui/Button';
+import { BillingMultiSiteArt } from '../icons/BillingArt';
 import { RevealPanel } from '../ui/RevealPanel';
+import { Mail, ArrowRight } from 'lucide-react';
 
 interface BillingCardProps {
   onNavigate: (hash: string) => void;
@@ -10,48 +10,50 @@ interface BillingCardProps {
 export const BillingCard: React.FC<BillingCardProps> = ({ onNavigate }) => {
   return (
     <RevealPanel id="billbox" className="box bill rounded-3xl sm:rounded-4xl p-6 sm:p-9 bg-gradient-to-br from-[#181f50] via-[#12173f] to-[#0d1130] border border-pink/40 shadow-[0_15px_45px_rgba(238,79,127,0.18)] flex flex-col justify-between relative overflow-hidden">
-      {/* Radial Corner Glow matching home page */}
+      {/* Radial Corner Glow matching website theme */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(80%_120%_at_100%_0,var(--glow),transparent_60%)] pointer-events-none" />
 
       <div className="relative z-10 flex flex-col justify-between h-full">
         <div>
-          {/* Singular Heading */}
-          <h2 className="dim font-display font-extrabold text-[clamp(1.6rem,3.2vw,2.5rem)] text-text mb-6 tracking-tight">
-            Payment Plan
+          {/* Main Title matching photo: 'Annual Licensing Plan' */}
+          <h2 className="dim font-display font-extrabold text-[clamp(1.7rem,3.4vw,2.6rem)] text-text mb-6 tracking-tight leading-[1.1]">
+            Annual <span className="text-pink">Licensing</span> Plan
           </h2>
 
-          {/* Hospital Network Illustration SVG */}
-          <div className="w-full aspect-[240/125] mb-6">
-            <BillingCustomizedArt />
+          {/* Multi-Site Hospital & Document Artwork */}
+          <div className="w-full aspect-[280/150] mb-6">
+            <BillingMultiSiteArt />
           </div>
 
-          {/* Description */}
+          {/* Subheading & Description matching photo */}
           <div className="mb-6">
             <h3 className="font-display font-extrabold text-lg sm:text-xl text-text mb-2.5 tracking-tight">
-              Customized Solutions
+              Multi-Site Access
             </h3>
             <p className="text-xs sm:text-sm text-muted leading-relaxed">
-              We offer customized billing plans tailored to your hospital or medical network’s specific volume and operational reach. Please reach out to our team to discuss the ideal configuration for your institution.
+              Our annual licensing plan provides access to Cerebrocure’s AI-powered stroke care platform, tailored to your hospital or medical network’s specific volume and operational needs.
             </p>
           </div>
         </div>
 
-        {/* Footer Copy & CTA */}
+        {/* Footer Note & Gradient CTA Button */}
         <div className="relative z-10 pt-6 border-t border-line/60 mt-auto">
           <p className="text-xs sm:text-sm text-muted mb-4 font-normal">
-            For Customized plans, Contact Us
+            For annual licensing plans, contact us.
           </p>
-          <Button
-            variant="solid"
+          
+          <a
             href="#/contact"
-            className="w-full text-center"
             onClick={(e) => {
               e.preventDefault();
               onNavigate('#/contact');
             }}
+            className="w-full py-3.5 px-6 rounded-full bg-gradient-to-r from-pink via-[#ff5d8f] to-pink text-[#0A1033] font-extrabold text-sm sm:text-base shadow-[0_6px_20px_rgba(238,79,127,0.4)] hover:shadow-[0_10px_28px_rgba(238,79,127,0.6)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 inline-flex items-center justify-center gap-2.5 select-none cursor-pointer"
           >
-            Get in touch
-          </Button>
+            <Mail size={18} />
+            <span>Get in touch</span>
+            <ArrowRight size={18} />
+          </a>
         </div>
       </div>
     </RevealPanel>
