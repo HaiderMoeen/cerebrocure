@@ -1,7 +1,7 @@
 import React from 'react';
 import { Linkedin } from 'lucide-react';
 import { useIntersectionReveal } from '../../hooks/useIntersectionReveal';
-import drSairaImg from '../../assets/Dr Saira.jpg';
+import drSairaImg from '../../assets/dr-saira.jpg';
 
 export const AboutFounder: React.FC = () => {
   const [headerRef, headerVisible] = useIntersectionReveal<HTMLDivElement>();

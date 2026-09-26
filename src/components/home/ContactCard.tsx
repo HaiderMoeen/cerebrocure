@@ -18,6 +18,7 @@ export const ContactCard: React.FC<ContactCardProps> = ({ flashKey }) => {
     position: '',
     institute: '',
     message: '',
+    website: '', // honeypot: hidden from users, bots tend to fill it
   });
 
   const [submitted, setSubmitted] = useState(false);
@@ -49,7 +50,7 @@ export const ContactCard: React.FC<ContactCardProps> = ({ flashKey }) => {
     setErrorMessage(null);
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('/contact.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -59,13 +60,13 @@ export const ContactCard: React.FC<ContactCardProps> = ({ flashKey }) => {
 
       if (response.ok && data.success) {
         setSubmitted(true);
-        setFormData({ name: '', email: '', position: '', institute: '', message: '' });
+        setFormData({ name: '', email: '', position: '', institute: '', message: '', website: '' });
       } else {
         // Fallback or error message
         const msg = data.error || 'Unable to send message directly. Opening email client fallback...';
         setErrorMessage(msg);
         
-        // Mailto fallback if Vercel function key not configured yet
+        // Mailto fallback if contact.php fails or the server config is missing
         const mailtoUrl = `mailto:contact@cerebrocure.ai?subject=${encodeURIComponent(
           `Inquiry from ${formData.name}`
         )}&body=${encodeURIComponent(
@@ -125,6 +126,20 @@ export const ContactCard: React.FC<ContactCardProps> = ({ flashKey }) => {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                  {/* Honeypot: off-screen and skipped by keyboard/screen readers */}
+                  <div aria-hidden="true" className="absolute -left-[9999px] w-px h-px overflow-hidden">
+                    <label htmlFor="website">Website</label>
+                    <input
+                      type="text"
+                      id="website"
+                      name="website"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      value={formData.website}
+                      onChange={handleChange}
+                    />
+                  </div>
+
                   {/* Row 1: Name & Email */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
                     <div>

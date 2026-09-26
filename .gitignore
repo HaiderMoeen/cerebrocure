@@ -35,3 +35,6 @@ dist-ssr/
 .env.development.local
 .env.test.local
 .env.production.local
+
+# Server-side secrets for contact.php (lives outside the web root)
+cerebrocure-config.php
